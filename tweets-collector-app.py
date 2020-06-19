@@ -11,7 +11,7 @@ import json
 with open('twitter-settings.json', 'r') as twitter_settings_content:
     twitter_settings = json.load(twitter_settings_content)
 
-# Loads search query arguments from external file
+# Loads search query parameters from external file
 with open('search-query-parameters.json', 'r') as search_query_parameters_content:
     search_query_parameters = json.load(search_query_parameters_content)
 
