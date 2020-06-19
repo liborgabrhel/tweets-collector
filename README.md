@@ -2,7 +2,7 @@
 
 This is a simple python script to search tweets and to save them into a text file.
 
-To run this script download this repository and To run this script download this repository and follow these steps:
+To run this script download this repository and follow these steps:
 
 ## Setings
 
