@@ -9,6 +9,8 @@ To run this script download this repository and follow these steps:
 1. In the `twitter-settings.json` file fill in your twitter `consumer_key`, `consumer_secret`, `access_key` and `access_secret`
 2. In the `search-query-parameters.json` file fill in the search parameters
 
+❗️ Query parameter `keywords` take all the keywords you want to search. Inside the string separate them with space.
+
 ❗️ Query parameter `from_user` can be with or without `@` prefix.
 
 ❗️ Query parameters `language`, `from_user`, `since` and `until` can be empty.
