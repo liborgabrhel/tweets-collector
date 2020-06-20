@@ -27,10 +27,9 @@ To run this script download this repository and follow these steps:
 
 ## Schritt-für-Schritt-Anleitung
 1. Entpacken Sie die ZIP-Datei!
-2. Erstellen Sie einen neuen Ordner mit dem Namen `collected-tweets` in dem entpackten Ordner.
-3. Füllen Sie `consumer_key`, `consumer_secret`, `access_key` und `access_secret` in der `twitter-settings.json`-Datei aus.
-4. Füllen Sie die Suchparameter in der `search-query-parameters.json`-Datei aus.
-5. **Folgende Suchparameter können bestimmt werden:**
+2. Füllen Sie `consumer_key`, `consumer_secret`, `access_key` und `access_secret` in der `twitter-settings.json`-Datei aus.
+3. Füllen Sie die Suchparameter in der `search-query-parameters.json`-Datei aus.
+4. **Folgende Suchparameter können bestimmt werden:**
     - `keywords` – Führen Sie hier alle Stichwörter, nach denen Sie suchen möchten, trennen Sie die einzelnen Stichwörter je mit einem Leerzeichen.
     - `from_user` – Füllen Sie hier @Handle aus, und zwar mit/ohne @.
     - `language` – Füllen Sie hier die beliebte Sprache aus – in unserem Fall: de – es wird dann bei jedem Tweet überprüft, ob es sich tatsächlich um einen deutschen Text handelt.
