@@ -8,11 +8,11 @@ import tweepy
 import json
 
 # Loads twitter settings from external file
-with open('twitter-settings.json', 'r') as twitter_settings_content:
+with open('twitter-settings.json', 'r', encoding='utf8') as twitter_settings_content:
     twitter_settings = json.load(twitter_settings_content)
 
 # Loads search query parameters from external file
-with open('search-query-parameters.json', 'r') as search_query_parameters_content:
+with open('search-query-parameters.json', 'r', encoding='utf8') as search_query_parameters_content:
     search_query_parameters = json.load(search_query_parameters_content)
 
 # Sets the twitter api
@@ -48,7 +48,7 @@ def main():
         else:
             text = status.full_text
 
-        with open(file_path, "w") as file:
+        with open(file_path, "w", encoding='utf8') as file:
             file.write(text)
 
     print('🎉 Done!')
