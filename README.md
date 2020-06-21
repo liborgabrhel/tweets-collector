@@ -34,5 +34,6 @@ To run this script download this repository and follow these steps:
     - `from_user` – Füllen Sie hier @Handle aus, und zwar mit/ohne @.
     - `language` – Füllen Sie hier die beliebte Sprache aus – in unserem Fall: de – es wird dann bei jedem Tweet überprüft, ob es sich tatsächlich um einen deutschen Text handelt.
     - `since` und `until` müssen immer folgend formatiert werden: `jjjj-mm-tt`. Es kann in der Standard-API-Version nur innerhalb von sieben Tagen gesucht werden – die gesuchten Tweets können also nicht älter als sieben Tage sein!
+    - `tweets_limit` – Führen Sie die bestrebte Anzahl von Tweets hier an, mindestens `1`.
 
 Suchparameter `language`, `from_user`, `since` und `until` können auch leer bleiben.
