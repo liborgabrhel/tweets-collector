@@ -24,7 +24,16 @@ To run this script download this repository and follow these steps:
 ### Windows
 
 ### Linux
- 
- 
 
+## Schritt-für-Schritt-Anleitung
+1. Entpacken Sie die ZIP-Datei!
+2. Füllen Sie `consumer_key`, `consumer_secret`, `access_key` und `access_secret` in der `twitter-settings.json`-Datei aus.
+3. Füllen Sie die Suchparameter in der `search-query-parameters.json`-Datei aus.
+4. **Folgende Suchparameter können bestimmt werden:**
+    - `keywords` – Führen Sie hier alle Stichwörter an, nach denen Sie suchen möchten, trennen Sie die einzelnen Stichwörter je mit einem Leerzeichen.
+    - `from_user` – Füllen Sie hier @Handle aus, und zwar mit/ohne @.
+    - `language` – Füllen Sie hier die beliebte Sprache aus – in unserem Fall: de – es wird dann bei jedem Tweet überprüft, ob es sich tatsächlich um einen deutschen Text handelt.
+    - `since` und `until` müssen immer folgend formatiert werden: `jjjj-mm-tt`. Es kann in der Standard-API-Version nur innerhalb von sieben Tagen gesucht werden – die gesuchten Tweets können also nicht älter als sieben Tage sein!
+    - `tweets_limit` – Führen Sie die bestrebte Anzahl von Tweets hier an, mindestens `1`.
 
+Suchparameter `language`, `from_user`, `since` und `until` können auch leer bleiben.
