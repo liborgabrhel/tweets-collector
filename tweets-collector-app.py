@@ -40,6 +40,7 @@ def setup():
                 'access_token_secret': access_token_secret,
             }
             twitter_settings_file.write(json.dumps(twitter_settings))
+            print('\nSettings file was successfully created.\n')
 
         # Return twitter settings
         return twitter_settings
