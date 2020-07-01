@@ -7,27 +7,51 @@
 import tweepy
 import json
 import timeit
+import os
 
-# Loads twitter settings from external file
-with open('twitter-settings.json', 'r', encoding='utf8') as twitter_settings_content:
-    twitter_settings = json.load(twitter_settings_content)
+twitter_settings_file_path = './twitter-settings.json'
 
 # Loads search query parameters from external file
 with open('search-query-parameters.json', 'r', encoding='utf8') as search_query_parameters_content:
     search_query_parameters = json.load(search_query_parameters_content)
 
-# Sets the twitter api
-consumer_key = twitter_settings['consumer_key']
-consumer_secret = twitter_settings['consumer_secret']
-access_key = twitter_settings['access_key']
-access_secret = twitter_settings['access_secret']
+# Setup process
+def setup():
+    do_twitter_settings_exist = os.path.isfile(twitter_settings_file_path)
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_key, access_secret)
-api = tweepy.API(auth_handler=auth, )
+    if do_twitter_settings_exist:
+        # Loads twitter settings from external file
+        with open(twitter_settings_file_path, 'r', encoding='utf8') as twitter_settings_content:
+            twitter_settings = json.load(twitter_settings_content)
+
+        # Return twitter settings
+        return twitter_settings
+    else:
+        api_key = input('Enter your API key: ')
+        api_secret_key = input('Enter your API secret key: ')
+        access_token = input('Enter your Access token: ')
+        access_token_secret = input('Enter your Access token secret: ')
+
+        with open(twitter_settings_file_path, 'w', encoding='utf8') as twitter_settings_file:
+            twitter_settings = {
+                'api_key': api_key,
+                'api_secret_key': api_secret_key,
+                'access_token': access_token,
+                'access_token_secret': access_token_secret,
+            }
+            twitter_settings_file.write(json.dumps(twitter_settings))
+
+        # Return twitter settings
+        return twitter_settings
 
 # Main application function
 def main():
+    twitter_settings = setup()
+
+    auth = tweepy.OAuthHandler(twitter_settings['api_key'], twitter_settings['api_secret_key'])
+    auth.set_access_token(twitter_settings['access_token'], twitter_settings['access_token_secret'])
+    api = tweepy.API(auth_handler=auth, )
+
     query_keywords = search_query_parameters['keywords']
     query_from = ('from:' + search_query_parameters['from_user']) if search_query_parameters['from_user'] else ""
     language = search_query_parameters['language']
